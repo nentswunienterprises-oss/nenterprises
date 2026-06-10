@@ -1,33 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" fill="none">
-  <g transform="translate(14 11)">
-    <path d="M18 10H68" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M32 10V60" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M112 10H162" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M137 10V60" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M20 122H70" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M45 76V122" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M32 10H68L96 60H60L32 10Z" fill="#0A0A0A"/>
-    <path d="M96 76H144V128H126L96 76Z" fill="#0A0A0A"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 156" fill="none">
+  <g transform="translate(12 10)">
+    <path d="M18 8H72" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M32 8V64" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M114 8H168" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M141 8V64" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M20 126H74" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M47 76V126" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M32 8H70L102 64H64L32 8Z" fill="#0A0A0A"/>
+    <path d="M100 76H150V130H132L100 76Z" fill="#0A0A0A"/>
   </g>
   <text
-    x="206"
-    y="56"
+    x="210"
+    y="54"
     fill="#0A0A0A"
     font-family="Inter, Arial, sans-serif"
-    font-size="38"
+    font-size="40"
     font-weight="700"
-    letter-spacing="11"
+    letter-spacing="10"
+    textLength="360"
+    lengthAdjust="spacingAndGlyphs"
   >
     NENTERPRISES
   </text>
   <text
-    x="206"
-    y="95"
+    x="212"
+    y="94"
     fill="#6E6A64"
     font-family="Inter, Arial, sans-serif"
-    font-size="14"
+    font-size="12"
     font-weight="500"
-    letter-spacing="7"
+    letter-spacing="6"
+    textLength="214"
+    lengthAdjust="spacingAndGlyphs"
   >
     INSTITUTIONAL PLATFORM
   </text>
