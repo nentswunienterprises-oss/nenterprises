@@ -113,17 +113,23 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0;
+  min-width: 0;
 }
 
 .brand-mark {
-  width: 170px;
+  width: 172px;
   height: auto;
   object-fit: contain;
   flex: 0 0 auto;
 }
 
+.brand-mark-header {
+  width: 262px;
+  max-width: min(46vw, 262px);
+}
+
 .brand-mark.large {
-  width: 198px;
+  width: 208px;
   height: auto;
 }
 
@@ -400,6 +406,7 @@ button {
   display: grid;
   gap: 18px;
   align-items: center;
+  justify-items: start;
 }
 
 .page-aside h2,
@@ -719,6 +726,7 @@ button {
 }
 
 .footer-mark {
+  width: 128px;
   opacity: 0.98;
 }
 
@@ -838,6 +846,10 @@ button {
 
   .brand-mark {
     width: 138px;
+  }
+
+  .brand-mark-header {
+    width: min(54vw, 228px);
   }
 
   .brand-mark.large {
