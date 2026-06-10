@@ -112,37 +112,19 @@ button {
 .brand-lockup {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
-}
-
-.brand-text span,
-.footer-brand p {
-  display: block;
-  font-family: "Inter Tight", "Inter", sans-serif;
-  font-size: 1.06rem;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-}
-
-.brand-text small,
-.footer-brand small {
-  color: rgba(10, 10, 10, 0.65);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  gap: 0;
 }
 
 .brand-mark {
-  width: 58px;
-  height: 58px;
+  width: 184px;
+  height: auto;
   object-fit: contain;
   flex: 0 0 auto;
 }
 
 .brand-mark.large {
-  width: 152px;
-  height: 152px;
+  width: 188px;
+  height: auto;
 }
 
 .brand-mark-hero,
@@ -416,24 +398,26 @@ button {
 
 .hero-panel-mark {
   display: grid;
-  gap: 26px;
+  gap: 18px;
   align-items: center;
 }
 
-.hero-panel-copy h2,
 .page-aside h2,
 .parent-card h3,
 .copy-card h2 {
   margin: 0;
 }
 
-.hero-panel-copy h2,
 .page-aside h2 {
   font-family: "Inter Tight", "Inter", sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.hero-panel-copy {
+  max-width: 29ch;
 }
 
 .hero-panel-copy p,
@@ -738,6 +722,15 @@ button {
   opacity: 0.98;
 }
 
+.footer-brand small {
+  display: block;
+  max-width: 28ch;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .footer-meta {
   color: rgba(255, 255, 255, 0.66);
   font-size: 0.86rem;
@@ -780,10 +773,6 @@ button {
 @media (max-width: 800px) {
   .site-header {
     padding: 14px 0;
-  }
-
-  .brand-text small {
-    display: none;
   }
 
   .nav-toggle {
@@ -845,6 +834,14 @@ button {
   .copy-card h2,
   .principle-card h2 {
     font-size: clamp(2.15rem, 10vw, 3.25rem);
+  }
+
+  .brand-mark {
+    width: 148px;
+  }
+
+  .brand-mark.large {
+    width: 154px;
   }
 
   .site-map-grid,
