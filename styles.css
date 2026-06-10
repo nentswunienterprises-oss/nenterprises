@@ -116,14 +116,14 @@ button {
 }
 
 .brand-mark {
-  width: 184px;
+  width: 170px;
   height: auto;
   object-fit: contain;
   flex: 0 0 auto;
 }
 
 .brand-mark.large {
-  width: 188px;
+  width: 198px;
   height: auto;
 }
 
@@ -417,7 +417,7 @@ button {
 }
 
 .hero-panel-copy {
-  max-width: 29ch;
+  max-width: 27ch;
 }
 
 .hero-panel-copy p,
@@ -837,11 +837,11 @@ button {
   }
 
   .brand-mark {
-    width: 148px;
+    width: 138px;
   }
 
   .brand-mark.large {
-    width: 154px;
+    width: 162px;
   }
 
   .site-map-grid,
