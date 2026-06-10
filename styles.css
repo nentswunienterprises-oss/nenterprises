@@ -113,6 +113,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 14px;
+  margin-left: 14px;
   min-width: 0;
 }
 
@@ -790,6 +791,7 @@ button {
 @media (max-width: 800px) {
   .brand-lockup {
     gap: 8px;
+    margin-left: 0;
   }
 
   .site-header {
