@@ -701,6 +701,95 @@ button {
   font-size: 1rem;
 }
 
+.ecosystem-map {
+  display: grid;
+  gap: 20px;
+}
+
+.map-parent-node,
+.map-lane {
+  position: relative;
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.map-parent-node {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(238, 231, 222, 0.92));
+}
+
+.map-parent-node::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  width: 1px;
+  height: 20px;
+  background: rgba(10, 10, 10, 0.18);
+}
+
+.map-lanes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.map-lane {
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.map-lane::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 1px;
+  height: 20px;
+  background: rgba(10, 10, 10, 0.18);
+}
+
+.map-lane-dark {
+  color: #fff;
+  background:
+    linear-gradient(155deg, rgba(167, 139, 99, 0.24), transparent 42%),
+    linear-gradient(180deg, #1f1f1f, #111111);
+}
+
+.map-lane-dark .map-node-label,
+.map-lane-dark li {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.map-node-label {
+  margin: 0 0 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(10, 10, 10, 0.56);
+}
+
+.map-parent-node h3,
+.map-lane h3 {
+  margin: 0;
+  font-family: "Inter Tight", "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.map-parent-node p {
+  margin: 10px 0 0;
+  color: rgba(10, 10, 10, 0.72);
+}
+
+.map-lane ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
 .timeline-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -783,7 +872,8 @@ button {
   .feature-grid,
   .entity-grid,
   .article-grid,
-  .timeline-grid {
+  .timeline-grid,
+  .map-lanes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -882,8 +972,14 @@ button {
   .entity-grid,
   .article-grid,
   .document-grid,
-  .timeline-grid {
+  .timeline-grid,
+  .map-lanes {
     grid-template-columns: 1fr;
+  }
+
+  .map-parent-node::after,
+  .map-lane::before {
+    display: none;
   }
 
   .hero-metrics {
