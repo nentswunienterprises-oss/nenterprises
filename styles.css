@@ -124,8 +124,8 @@ button {
 }
 
 .brand-mark-header {
-  width: 360px;
-  max-width: min(58vw, 360px);
+  width: 108px;
+  max-width: min(28vw, 108px);
 }
 
 .brand-mark.large {
@@ -849,7 +849,7 @@ button {
   }
 
   .brand-mark-header {
-    width: min(76vw, 300px);
+    width: min(28vw, 92px);
   }
 
   .brand-mark.large {
