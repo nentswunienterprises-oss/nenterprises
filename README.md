@@ -52,6 +52,7 @@ Recommended flow:
 Current live deployment:
 
 - `https://nenterprises.vercel.app`
+- Intended primary domain: `https://nenterprises.co.za`
 
 ## Files added for deployment
 
@@ -64,3 +65,4 @@ Current live deployment:
 
 - Internal pages use folder-based routes so they work cleanly on both Vercel and static hosting.
 - The source Markdown documents remain in the root and are linked from the public documents page.
+- `www.nenterprises.co.za` is configured to redirect to `nenterprises.co.za` once DNS is pointed at Vercel.
