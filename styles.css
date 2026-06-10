@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800&display=swap");
+
 :root {
   --ink: #0a0a0a;
   --paper: #f8f4ee;
@@ -27,7 +29,7 @@ body {
     radial-gradient(circle at top left, rgba(167, 139, 99, 0.18), transparent 32%),
     radial-gradient(circle at top right, rgba(10, 10, 10, 0.05), transparent 28%),
     linear-gradient(180deg, #fcfbf8 0%, var(--paper) 44%, #efe8df 100%);
-  font-family: "Aptos", "Segoe UI", sans-serif;
+  font-family: "Inter", "Segoe UI", sans-serif;
   line-height: 1.6;
 }
 
@@ -49,6 +51,7 @@ a {
   text-decoration: none;
 }
 
+img,
 svg {
   display: block;
   max-width: 100%;
@@ -115,10 +118,10 @@ button {
 .brand-text span,
 .footer-brand p {
   display: block;
-  font-family: "Bahnschrift", "Segoe UI", sans-serif;
-  font-size: 1.08rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
+  font-family: "Inter Tight", "Inter", sans-serif;
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 
@@ -126,21 +129,29 @@ button {
 .footer-brand small {
   color: rgba(10, 10, 10, 0.65);
   font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .brand-mark {
-  width: 50px;
-  height: 50px;
-  fill: var(--ink);
-  stroke: var(--ink);
-  stroke-width: 7;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .brand-mark.large {
-  width: 168px;
-  height: 168px;
+  width: 152px;
+  height: 152px;
+}
+
+.brand-mark-hero,
+.footer-mark {
+  filter: brightness(0) invert(1);
+}
+
+.brand-mark-hero {
+  opacity: 0.94;
 }
 
 .nav-toggle {
@@ -172,7 +183,9 @@ button {
 .site-nav a {
   position: relative;
   padding: 8px 0;
+  font-family: "Inter Tight", "Inter", sans-serif;
   font-size: 0.88rem;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -267,14 +280,16 @@ button {
 .copy-card h2,
 .principle-card h2 {
   margin: 0;
-  font-family: "Georgia", "Times New Roman", serif;
-  font-size: clamp(2.4rem, 6vw, 5rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  font-family: "Inter Tight", "Inter", sans-serif;
+  font-size: clamp(2.35rem, 5.5vw, 4.8rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
 }
 
 .page-title {
-  max-width: 11ch;
+  max-width: 12ch;
 }
 
 .hero-summary,
@@ -291,6 +306,10 @@ button {
   margin: 24px 0 0;
   color: rgba(10, 10, 10, 0.72);
   font-size: 1.05rem;
+}
+
+.hero-copy h1 {
+  max-width: 9ch;
 }
 
 .page-summary {
@@ -410,9 +429,10 @@ button {
 
 .hero-panel-copy h2,
 .page-aside h2 {
-  font-family: "Bahnschrift", "Segoe UI", sans-serif;
-  font-size: 1.75rem;
-  letter-spacing: 0.22em;
+  font-family: "Inter Tight", "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -457,6 +477,8 @@ button {
 .timeline-card h3,
 .article-card h3 {
   margin: 0;
+  font-family: "Inter Tight", "Inter", sans-serif;
+  font-weight: 700;
   font-size: 1.15rem;
 }
 
@@ -616,6 +638,8 @@ button {
 
 .parent-card h3 {
   font-size: 2rem;
+  font-family: "Inter Tight", "Inter", sans-serif;
+  font-weight: 700;
 }
 
 .entity-grid,
@@ -636,6 +660,7 @@ button {
   margin: 0 0 10px;
   color: rgba(10, 10, 10, 0.56);
   font-size: 0.76rem;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -710,8 +735,7 @@ button {
 }
 
 .footer-mark {
-  fill: #fff;
-  stroke: #fff;
+  opacity: 0.98;
 }
 
 .footer-meta {
@@ -820,7 +844,7 @@ button {
   .page-title,
   .copy-card h2,
   .principle-card h2 {
-    font-size: clamp(2.2rem, 10vw, 3.4rem);
+    font-size: clamp(2.15rem, 10vw, 3.25rem);
   }
 
   .site-map-grid,
