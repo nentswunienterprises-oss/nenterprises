@@ -61,21 +61,6 @@ button {
   font: inherit;
 }
 
-.skip-link {
-  position: absolute;
-  top: -48px;
-  left: 24px;
-  padding: 12px 18px;
-  background: var(--graphite);
-  color: #fff;
-  border-radius: 999px;
-  z-index: 30;
-}
-
-.skip-link:focus {
-  top: 24px;
-}
-
 .container {
   width: min(calc(100% - 40px), var(--max-width));
   margin: 0 auto;
