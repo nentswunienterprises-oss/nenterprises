@@ -49,12 +49,16 @@ Recommended flow:
 5. Leave the output directory empty because the site is served directly from the repo root.
 6. Deploy.
 
+Current live deployment:
+
+- `https://nenterprises.vercel.app`
+
 ## Files added for deployment
 
 - `vercel.json` for static hosting behavior and basic security headers
 - `.gitignore` for Git and Vercel hygiene
 - `robots.txt`
-- `sitemap.xml` using a placeholder domain that should be updated before production
+- `sitemap.xml`
 
 ## Notes
 

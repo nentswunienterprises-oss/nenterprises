@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://your-domain.example/</loc>
+    <loc>https://nenterprises.vercel.app/</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/constitution/</loc>
+    <loc>https://nenterprises.vercel.app/constitution/</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/ecosystem/</loc>
+    <loc>https://nenterprises.vercel.app/ecosystem/</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/approach/</loc>
+    <loc>https://nenterprises.vercel.app/approach/</loc>
   </url>
   <url>
-    <loc>https://your-domain.example/documents/</loc>
+    <loc>https://nenterprises.vercel.app/documents/</loc>
   </url>
 </urlset>
