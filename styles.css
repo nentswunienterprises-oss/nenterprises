@@ -112,7 +112,7 @@ button {
 .brand-lockup {
   display: inline-flex;
   align-items: center;
-  gap: 0;
+  gap: 14px;
   min-width: 0;
 }
 
@@ -126,6 +126,15 @@ button {
 .brand-mark-header {
   width: 108px;
   max-width: min(28vw, 108px);
+}
+
+.brand-wordmark {
+  font-family: "Inter Tight", "Inter", sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .brand-mark.large {
@@ -850,6 +859,11 @@ button {
 
   .brand-mark-header {
     width: min(28vw, 92px);
+  }
+
+  .brand-wordmark {
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
   }
 
   .brand-mark.large {
