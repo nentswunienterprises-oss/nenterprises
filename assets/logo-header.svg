@@ -1,33 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 160" fill="none">
-  <g transform="translate(12 10)">
-    <path d="M24 14H74" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M36 14V62" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M110 14H160" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M136 14V62" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M24 126H74" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M50 82V126" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
-    <path d="M36 14H70L98 62H64L36 14Z" fill="#0A0A0A"/>
-    <path d="M100 82H148V128H130L100 82Z" fill="#0A0A0A"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" fill="none">
+  <g transform="translate(14 11)">
+    <path d="M18 10H68" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M32 10V60" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M112 10H162" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M137 10V60" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M20 122H70" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M45 76V122" stroke="#0A0A0A" stroke-width="5" stroke-linecap="square"/>
+    <path d="M32 10H68L96 60H60L32 10Z" fill="#0A0A0A"/>
+    <path d="M96 76H144V128H126L96 76Z" fill="#0A0A0A"/>
   </g>
   <text
-    x="220"
-    y="62"
+    x="206"
+    y="56"
     fill="#0A0A0A"
     font-family="Inter, Arial, sans-serif"
-    font-size="42"
+    font-size="38"
     font-weight="700"
-    letter-spacing="14"
+    letter-spacing="11"
   >
     NENTERPRISES
   </text>
   <text
-    x="220"
-    y="108"
+    x="206"
+    y="95"
     fill="#6E6A64"
     font-family="Inter, Arial, sans-serif"
-    font-size="20"
+    font-size="14"
     font-weight="500"
-    letter-spacing="8"
+    letter-spacing="7"
   >
     INSTITUTIONAL PLATFORM
   </text>

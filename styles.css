@@ -124,12 +124,12 @@ button {
 }
 
 .brand-mark-header {
-  width: 262px;
-  max-width: min(46vw, 262px);
+  width: 236px;
+  max-width: min(42vw, 236px);
 }
 
 .brand-mark.large {
-  width: 208px;
+  width: 196px;
   height: auto;
 }
 
@@ -139,7 +139,7 @@ button {
 }
 
 .brand-mark-hero {
-  opacity: 0.94;
+  opacity: 0.96;
 }
 
 .nav-toggle {
@@ -726,7 +726,7 @@ button {
 }
 
 .footer-mark {
-  width: 128px;
+  width: 118px;
   opacity: 0.98;
 }
 
@@ -849,11 +849,11 @@ button {
   }
 
   .brand-mark-header {
-    width: min(54vw, 228px);
+    width: min(56vw, 214px);
   }
 
   .brand-mark.large {
-    width: 162px;
+    width: 154px;
   }
 
   .site-map-grid,

@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 340" fill="none">
-  <path d="M50 36H136" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M72 36V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M224 36H310" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M266 36V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M50 296H136" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M92 208V296" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M72 36H126L180 132H126L72 36Z" fill="#0A0A0A"/>
-  <path d="M192 208H262V296H236L192 208Z" fill="#0A0A0A"/>
+  <path d="M48 38H132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M70 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M226 38H308" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M267 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M48 296H132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M90 204V296" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M70 38H124L176 132H122L70 38Z" fill="#0A0A0A"/>
+  <path d="M194 204H266V296H238L194 204Z" fill="#0A0A0A"/>
   <text
     x="180"
-    y="185"
+    y="182"
     fill="#0A0A0A"
     font-family="Inter, Arial, sans-serif"
-    font-size="31"
+    font-size="29"
     font-weight="700"
-    letter-spacing="6"
+    letter-spacing="5"
     text-anchor="middle"
-    textLength="228"
+    textLength="214"
     lengthAdjust="spacingAndGlyphs"
   >
     ENTERPRISES
