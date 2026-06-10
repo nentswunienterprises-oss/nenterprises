@@ -788,6 +788,10 @@ button {
 }
 
 @media (max-width: 800px) {
+  .brand-lockup {
+    gap: 8px;
+  }
+
   .site-header {
     padding: 14px 0;
   }
@@ -859,6 +863,7 @@ button {
 
   .brand-mark-header {
     width: min(28vw, 92px);
+    margin-right: -8px;
   }
 
   .brand-wordmark {
