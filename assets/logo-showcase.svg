@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 340" fill="none">
-  <path d="M58 38H136" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M84 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M56 38H134" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M82 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
   <path d="M226 38H308" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
   <path d="M267 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M58 296H136" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M84 204V296" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M84 38H130L176 132H124L84 38Z" fill="#0A0A0A"/>
+  <path d="M56 296H134" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M88 204V296" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M82 38H128L174 132H122L82 38Z" fill="#0A0A0A"/>
   <path d="M198 204H262V296H234L198 204Z" fill="#0A0A0A"/>
   <text
     x="180"
