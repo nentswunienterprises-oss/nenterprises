@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 340" fill="none">
-  <path d="M48 38H132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M70 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M56 38H134" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M82 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
   <path d="M226 38H308" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
   <path d="M267 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M48 296H132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M90 204V296" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M70 38H124L176 132H122L70 38Z" fill="#0A0A0A"/>
-  <path d="M194 204H266V296H238L194 204Z" fill="#0A0A0A"/>
+  <path d="M56 296H134" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M96 204V296" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M82 38H128L176 132H124L82 38Z" fill="#0A0A0A"/>
+  <path d="M202 204H266V296H238L202 204Z" fill="#0A0A0A"/>
   <text
     x="180"
     y="182"
