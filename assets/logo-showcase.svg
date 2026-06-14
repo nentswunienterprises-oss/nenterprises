@@ -6,7 +6,7 @@
   <path d="M56 296H134" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
   <path d="M88 204V296" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
   <path d="M82 38H128L174 132H122L82 38Z" fill="#0A0A0A"/>
-  <path d="M198 212H262V304H234L198 212Z" fill="#0A0A0A"/>
+  <path d="M198 210H262V302H234L198 210Z" fill="#0A0A0A"/>
   <text
     x="180"
     y="182"
