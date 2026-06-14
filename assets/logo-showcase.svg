@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 340" fill="none">
   <path d="M56 38H134" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
   <path d="M82 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M226 38H308" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
-  <path d="M267 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M218 38H300" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M259 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
   <path d="M56 296H134" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
   <path d="M88 204V296" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
   <path d="M82 38H128L174 132H122L82 38Z" fill="#0A0A0A"/>
