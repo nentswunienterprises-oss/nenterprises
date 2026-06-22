@@ -7,7 +7,21 @@ Nenterprises serves as the parent institution and ownership vehicle of the Nente
 Ownership Structure
 Parent Entity:
 Nenterprises (Pty) Ltd
-Nenterprises owns, develops, governs, and supports ecosystem divisions, intellectual property, and subsidiary companies.
+Nenterprises owns, develops, governs, and supports subsidiary companies, ecosystem divisions, and intellectual property.
+
+Subsidiary Companies
+The following companies operate as commercial subsidiaries within the Nenterprises Ecosystem.
+Response Integrity (Pty) Ltd
+Purpose: Education and Performance Conditioning.
+Focus: Helping students develop stable academic performance under pressure through structured mathematics mentorship and response conditioning systems.
+
+Relief Works Technologies (Pty) Ltd
+Purpose: Execution Infrastructure.
+Focus: Building systems, software, automation, documentation, and operational infrastructure that reduce fragility and improve execution.
+
+Tsa Kasi Logistics (Pty) Ltd
+Purpose: Commerce Movement Infrastructure.
+Focus: Building regional logistics infrastructure that enables reliable, affordable, and scalable movement of goods, services, and commerce.
 
 Ecosystem Divisions
 The following entities operate as divisions of Nenterprises and are not separate legal entities unless formally established otherwise.
@@ -31,20 +45,6 @@ Idea Gravity
 Purpose: Meaning and Narrative Infrastructure.
 Responsibility: Articulate, strengthen, and communicate meaningful ideas capable of attracting people, communities, opportunities, capital, and institutions.
 
-Subsidiary Companies
-The following companies operate as commercial subsidiaries within the Nenterprises Ecosystem.
-Response Integrity (Pty) Ltd
-Purpose: Education and Performance Conditioning.
-Focus: Helping students develop stable academic performance under pressure through structured mathematics mentorship and response conditioning systems.
-
-Relief Works Technologies (Pty) Ltd
-Purpose: Execution Infrastructure.
-Focus: Building systems, software, automation, documentation, and operational infrastructure that reduce fragility and improve execution.
-
-Tsa Kasi Logistics (Pty) Ltd
-Purpose: Commerce Movement Infrastructure.
-Focus: Building regional logistics infrastructure that enables reliable, affordable, and scalable movement of goods, services, and commerce.
-
 Capital Structure Principle
 Commercial subsidiaries generate revenue through marketplace activity.
 Divisions do not operate as independent legal entities and do not hold capital independently.
@@ -55,16 +55,16 @@ All ecosystem constitutions, methodologies, frameworks, doctrines, systems, bran
 
 Ecosystem Model
 Nenterprises (Pty) Ltd
+Subsidiaries:
+Response Integrity (Pty) Ltd
+Relief Works Technologies (Pty) Ltd
+Tsa Kasi Logistics (Pty) Ltd
 Divisions:
 First Conviction
 Accord Signal
 Steward State
 City of Problem Solving
 Idea Gravity
-Subsidiaries:
-Response Integrity (Pty) Ltd
-Relief Works Technologies (Pty) Ltd
-Tsa Kasi Logistics (Pty) Ltd
 
 Guiding Principle
 Nenterprises exists to transform discoveries into institutions capable of surviving beyond their founder.
