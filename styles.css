@@ -523,6 +523,11 @@ button {
   color: #fff;
 }
 
+.black-heading h2,
+.black-heading p {
+  color: #0a0a0a;
+}
+
 .site-map-grid,
 .feature-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
