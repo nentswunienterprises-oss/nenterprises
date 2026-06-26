@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nenterprises Document Studio | Branded Rich-Text Creation</title>
+  <meta
+    name="description"
+    content="Create, format, preview, and print rich-text Nenterprises documents from pasted HTML or direct editing."
+  >
+  <link rel="canonical" href="https://nenterprises.co.za/studio/">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-shell">
+      <a class="brand-lockup" href="../" aria-label="Nenterprises home">
+        <img class="brand-mark brand-mark-header" src="../assets/logo-showcase.svg" alt="" aria-hidden="true">
+        <span class="brand-wordmark" aria-hidden="true">NENTERPRISES</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="../">Home</a>
+        <a href="../constitution/">Constitution</a>
+        <a href="../ecosystem/">Ecosystem</a>
+        <a href="../approach/">Approach</a>
+        <a href="../documents/">Foundations</a>
+        <a aria-current="page" href="./">Studio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container page-hero-shell">
+        <div data-reveal>
+          <p class="eyebrow">Document Studio</p>
+          <h1 class="page-title">Paste copy, format rich text, and generate branded Nenterprises documents.</h1>
+          <p class="page-summary">
+            The studio lets you paste HTML copy, edit it visually, style the document shell, and
+            produce a clean Nenterprises output ready for printing, PDF export, or internal sharing.
+          </p>
+        </div>
+        <div class="page-aside" data-reveal>
+          <p class="panel-label">Use Case</p>
+          <h2>Internal Publishing</h2>
+          <p>
+            Create constitutional notes, operating memos, investment briefs, leadership letters,
+            reports, or branded drafts without leaving the Nenterprises visual system.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section studio-page">
+      <div class="container">
+        <div class="studio-shell" data-reveal>
+          <aside class="studio-sidebar">
+            <section class="studio-panel">
+              <div class="studio-panel-head">
+                <p class="eyebrow">Document Shell</p>
+                <h2>Metadata</h2>
+              </div>
+
+              <div class="studio-field-grid">
+                <label class="studio-field">
+                  <span>Document Type</span>
+                  <input id="doc-kicker" type="text" value="Nenterprises Internal Document">
+                </label>
+                <label class="studio-field">
+                  <span>Title</span>
+                  <input id="doc-title" type="text" value="Building continuity through doctrine and execution.">
+                </label>
+                <label class="studio-field">
+                  <span>Subtitle</span>
+                  <textarea id="doc-subtitle" rows="3">This document translates principles into a readable, branded format for internal and external use.</textarea>
+                </label>
+                <div class="studio-field-grid compact">
+                  <label class="studio-field">
+                    <span>Reference</span>
+                    <input id="doc-reference" type="text" value="NENT-DOC-001">
+                  </label>
+                  <label class="studio-field">
+                    <span>Date</span>
+                    <input id="doc-date" type="text" value="26 June 2026">
+                  </label>
+                </div>
+                <label class="studio-field">
+                  <span>Footer Note</span>
+                  <input id="doc-footer" type="text" value="Nenterprises | Institutional continuity through doctrine, systems, and stewardship.">
+                </label>
+              </div>
+            </section>
+
+            <section class="studio-panel">
+              <div class="studio-panel-head">
+                <p class="eyebrow">Content Input</p>
+                <h2>Source HTML</h2>
+              </div>
+
+              <label class="studio-field">
+                <span>Paste Rich HTML</span>
+                <textarea id="html-input" rows="12"><p>This is a branded document body. Replace it by pasting your own HTML or writing directly in the editor.</p><h2>Operating premise</h2><p>Nenterprises documents should feel structured, deliberate, and durable. The purpose of the studio is to wrap raw copy in the institutional language of the group.</p><blockquote><p>Reality is the highest authority, and evidence is the final judge.</p></blockquote><ul><li>Discover principles</li><li>Institutionalize truth</li><li>Build continuity</li></ul></textarea>
+              </label>
+
+              <div class="studio-actions">
+                <button class="button button-dark studio-action" type="button" data-action="import-html">Import HTML</button>
+                <button class="button button-light studio-action" type="button" data-action="save-local">Save Draft</button>
+                <button class="button button-light studio-action" type="button" data-action="load-sample">Load Sample</button>
+                <button class="button button-light studio-action" type="button" data-action="clear">Clear</button>
+              </div>
+            </section>
+          </aside>
+
+          <section class="studio-workspace">
+            <div class="studio-panel">
+              <div class="studio-panel-head">
+                <p class="eyebrow">Rich Editor</p>
+                <h2>Format Content</h2>
+              </div>
+
+              <div class="editor-toolbar" role="toolbar" aria-label="Rich text formatting">
+                <button type="button" class="toolbar-button" data-command="bold">Bold</button>
+                <button type="button" class="toolbar-button" data-command="italic">Italic</button>
+                <button type="button" class="toolbar-button" data-command="underline">Underline</button>
+                <button type="button" class="toolbar-button" data-block="H1">H1</button>
+                <button type="button" class="toolbar-button" data-block="H2">H2</button>
+                <button type="button" class="toolbar-button" data-block="P">Body</button>
+                <button type="button" class="toolbar-button" data-block="BLOCKQUOTE">Quote</button>
+                <button type="button" class="toolbar-button" data-command="insertUnorderedList">Bullets</button>
+                <button type="button" class="toolbar-button" data-command="insertOrderedList">Numbers</button>
+                <button type="button" class="toolbar-button" data-command="removeFormat">Clear</button>
+                <button type="button" class="toolbar-button" data-action="link">Link</button>
+              </div>
+
+              <div
+                id="rich-editor"
+                class="rich-editor"
+                contenteditable="true"
+                spellcheck="true"
+                aria-label="Editable document content"
+              ></div>
+            </div>
+
+            <div class="studio-panel">
+              <div class="studio-panel-head">
+                <p class="eyebrow">Branded Output</p>
+                <h2>Live Preview</h2>
+              </div>
+
+              <div class="studio-actions preview-actions">
+                <button class="button button-dark studio-action" type="button" data-action="print">Print / PDF</button>
+                <button class="button button-light studio-action" type="button" data-action="download-html">Download HTML</button>
+              </div>
+
+              <div class="studio-preview-shell" id="studio-preview-shell">
+                <article class="doc-preview" id="doc-preview">
+                  <header class="doc-preview-header">
+                    <div class="doc-preview-brand">
+                      <img class="doc-preview-logo" src="../assets/logo-header.svg" alt="Nenterprises">
+                    </div>
+                    <div class="doc-preview-meta">
+                      <p class="doc-preview-reference" id="preview-reference">NENT-DOC-001</p>
+                      <p class="doc-preview-date" id="preview-date">26 June 2026</p>
+                    </div>
+                  </header>
+
+                  <section class="doc-preview-intro">
+                    <p class="doc-preview-kicker" id="preview-kicker">Nenterprises Internal Document</p>
+                    <h1 class="doc-preview-title" id="preview-title">Building continuity through doctrine and execution.</h1>
+                    <p class="doc-preview-subtitle" id="preview-subtitle">This document translates principles into a readable, branded format for internal and external use.</p>
+                  </section>
+
+                  <section class="doc-preview-body nenterprises-prose" id="preview-body"></section>
+
+                  <footer class="doc-preview-footer">
+                    <p id="preview-footer">Nenterprises | Institutional continuity through doctrine, systems, and stewardship.</p>
+                  </footer>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-brand">
+        <img class="brand-mark footer-mark" src="../assets/logo-showcase.svg" alt="" aria-hidden="true">
+        <div>
+          <small>A platform for long-term value creation and institutional continuity.</small>
+        </div>
+      </div>
+      <p class="footer-meta">Nenterprises Document Studio | <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
