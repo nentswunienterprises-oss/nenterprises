@@ -794,6 +794,21 @@ button {
   gap: 12px;
 }
 
+.share-link-row {
+  margin-bottom: 14px;
+}
+
+.share-field input[readonly] {
+  color: rgba(10, 10, 10, 0.66);
+}
+
+.studio-status {
+  min-height: 1.3em;
+  margin: 0 0 14px;
+  color: rgba(10, 10, 10, 0.58);
+  font-size: 0.86rem;
+}
+
 .studio-action {
   min-height: 48px;
 }
@@ -927,6 +942,31 @@ button {
 .doc-preview-footer {
   padding-top: 20px;
   border-top: 1px solid rgba(10, 10, 10, 0.1);
+}
+
+body.studio-preview-mode .page-hero,
+body.studio-preview-mode .studio-sidebar,
+body.studio-preview-mode .studio-workspace > .studio-panel:first-child,
+body.studio-preview-mode .preview-actions,
+body.studio-preview-mode .share-link-row,
+body.studio-preview-mode .studio-status {
+  display: none;
+}
+
+body.studio-preview-mode .studio-shell {
+  grid-template-columns: 1fr;
+}
+
+body.studio-preview-mode .studio-panel,
+body.studio-preview-mode .studio-preview-shell {
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+body.studio-preview-mode .doc-preview {
+  min-height: auto;
 }
 
 .nenterprises-prose,

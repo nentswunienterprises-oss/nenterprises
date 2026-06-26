@@ -111,6 +111,7 @@
               <div class="studio-actions">
                 <button class="button button-dark studio-action" type="button" data-action="import-html">Import HTML</button>
                 <button class="button button-light studio-action" type="button" data-action="save-local">Save Draft</button>
+                <button class="button button-light studio-action" type="button" data-action="copy-source-html">Copy Source HTML</button>
                 <button class="button button-light studio-action" type="button" data-action="load-sample">Load Sample</button>
                 <button class="button button-light studio-action" type="button" data-action="clear">Clear</button>
               </div>
@@ -153,10 +154,22 @@
                 <h2>Live Preview</h2>
               </div>
 
+              <div class="share-link-row">
+                <label class="studio-field share-field">
+                  <span>Shareable Page Link</span>
+                  <input id="share-link-output" type="text" readonly>
+                </label>
+              </div>
+
               <div class="studio-actions preview-actions">
                 <button class="button button-dark studio-action" type="button" data-action="print">Print / PDF</button>
+                <button class="button button-light studio-action" type="button" data-action="copy-rich-html">Copy Rich HTML</button>
+                <button class="button button-light studio-action" type="button" data-action="copy-share-link">Copy Share Link</button>
+                <button class="button button-light studio-action" type="button" data-action="open-share-view">Open Share View</button>
                 <button class="button button-light studio-action" type="button" data-action="download-html">Download HTML</button>
               </div>
+
+              <p class="studio-status" id="studio-status" aria-live="polite"></p>
 
               <div class="studio-preview-shell" id="studio-preview-shell">
                 <article class="doc-preview" id="doc-preview">

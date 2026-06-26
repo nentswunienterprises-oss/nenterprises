@@ -74,35 +74,104 @@ function initDocumentStudio() {
   const previewDate = document.querySelector("#preview-date");
   const previewFooter = document.querySelector("#preview-footer");
   const previewBody = document.querySelector("#preview-body");
+  const shareLinkOutput = document.querySelector("#share-link-output");
+  const statusNode = document.querySelector("#studio-status");
 
   const toolbarButtons = document.querySelectorAll(".toolbar-button");
   const actionButtons = document.querySelectorAll(".studio-action");
 
   const sampleHtml = htmlInput.value.trim();
+  let statusTimeout = null;
 
-  function parseHtmlFragment(rawHtml) {
-    const parser = new DOMParser();
-    const parsed = parser.parseFromString(rawHtml, "text/html");
-    return parsed.body.innerHTML.trim();
+  function setStatus(message) {
+    if (!statusNode) {
+      return;
+    }
+
+    statusNode.textContent = message;
+
+    if (statusTimeout) {
+      window.clearTimeout(statusTimeout);
+    }
+
+    statusTimeout = window.setTimeout(() => {
+      statusNode.textContent = "";
+    }, 2800);
   }
 
-  function syncPreviewFromEditor() {
-    const html = editor.innerHTML.trim();
-    htmlInput.value = html;
-    previewBody.innerHTML = html;
+  function bytesToBase64Url(bytes) {
+    let binary = "";
+    bytes.forEach((byte) => {
+      binary += String.fromCharCode(byte);
+    });
+
+    return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
   }
 
-  function syncMetaToPreview() {
-    previewKicker.textContent = docKicker.value.trim() || "Nenterprises Internal Document";
-    previewTitle.textContent = docTitle.value.trim() || "Untitled Nenterprises Document";
-    previewSubtitle.textContent = docSubtitle.value.trim() || "";
-    previewReference.textContent = docReference.value.trim() || "NENT-DOC";
-    previewDate.textContent = docDate.value.trim() || "";
-    previewFooter.textContent = docFooter.value.trim() || "";
+  function base64UrlToBytes(base64Url) {
+    const normalized = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    const padded = normalized + "=".repeat((4 - (normalized.length % 4 || 4)) % 4);
+    const binary = atob(padded);
+    const bytes = new Uint8Array(binary.length);
+
+    for (let index = 0; index < binary.length; index += 1) {
+      bytes[index] = binary.charCodeAt(index);
+    }
+
+    return bytes;
   }
 
-  function saveDraft() {
-    const state = {
+  async function encodeStatePayload(state) {
+    const json = JSON.stringify(state);
+    const input = new TextEncoder().encode(json);
+
+    if ("CompressionStream" in window) {
+      const stream = new CompressionStream("gzip");
+      const writer = stream.writable.getWriter();
+      writer.write(input);
+      writer.close();
+      const compressed = await new Response(stream.readable).arrayBuffer();
+      return `gz.${bytesToBase64Url(new Uint8Array(compressed))}`;
+    }
+
+    return `raw.${bytesToBase64Url(input)}`;
+  }
+
+  async function decodeStatePayload(payload) {
+    if (!payload) {
+      return null;
+    }
+
+    const [prefix, encoded] = payload.split(".", 2);
+
+    if (!prefix || !encoded) {
+      return null;
+    }
+
+    try {
+      const bytes = base64UrlToBytes(encoded);
+
+      if (prefix === "gz" && "DecompressionStream" in window) {
+        const stream = new DecompressionStream("gzip");
+        const writer = stream.writable.getWriter();
+        writer.write(bytes);
+        writer.close();
+        const decompressed = await new Response(stream.readable).arrayBuffer();
+        return JSON.parse(new TextDecoder().decode(decompressed));
+      }
+
+      if (prefix === "raw" || prefix === "gz") {
+        return JSON.parse(new TextDecoder().decode(bytes));
+      }
+    } catch (_error) {
+      return null;
+    }
+
+    return null;
+  }
+
+  function buildStudioState() {
+    return {
       kicker: docKicker.value,
       title: docTitle.value,
       subtitle: docSubtitle.value,
@@ -111,11 +180,89 @@ function initDocumentStudio() {
       footer: docFooter.value,
       html: htmlInput.value,
     };
-
-    localStorage.setItem(STUDIO_STORAGE_KEY, JSON.stringify(state));
   }
 
-  function loadDraft() {
+  async function buildShareUrl(previewMode = false) {
+    const state = buildStudioState();
+    const payload = await encodeStatePayload(state);
+    const url = new URL(window.location.href);
+    url.searchParams.set("doc", payload);
+
+    if (previewMode) {
+      url.searchParams.set("view", "preview");
+    } else {
+      url.searchParams.delete("view");
+    }
+
+    return url.toString();
+  }
+
+  async function syncShareLink() {
+    if (!shareLinkOutput) {
+      return;
+    }
+
+    shareLinkOutput.value = await buildShareUrl();
+  }
+
+  function applyPreviewModeFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const isPreviewMode = params.get("view") === "preview";
+
+    document.body.classList.toggle("studio-preview-mode", isPreviewMode);
+  }
+
+  function parseHtmlFragment(rawHtml) {
+    const parser = new DOMParser();
+    const parsed = parser.parseFromString(rawHtml, "text/html");
+    return parsed.body.innerHTML.trim();
+  }
+
+  async function syncPreviewFromEditor() {
+    const html = editor.innerHTML.trim();
+    htmlInput.value = html;
+    previewBody.innerHTML = html;
+    await syncShareLink();
+  }
+
+  async function syncMetaToPreview() {
+    previewKicker.textContent = docKicker.value.trim() || "Nenterprises Internal Document";
+    previewTitle.textContent = docTitle.value.trim() || "Untitled Nenterprises Document";
+    previewSubtitle.textContent = docSubtitle.value.trim() || "";
+    previewReference.textContent = docReference.value.trim() || "NENT-DOC";
+    previewDate.textContent = docDate.value.trim() || "";
+    previewFooter.textContent = docFooter.value.trim() || "";
+    await syncShareLink();
+  }
+
+  function saveDraft() {
+    localStorage.setItem(STUDIO_STORAGE_KEY, JSON.stringify(buildStudioState()));
+  }
+
+  async function loadDraftFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const payload = params.get("doc");
+    const state = await decodeStatePayload(payload);
+
+    if (!state) {
+      return false;
+    }
+
+    docKicker.value = state.kicker || docKicker.value;
+    docTitle.value = state.title || docTitle.value;
+    docSubtitle.value = state.subtitle || docSubtitle.value;
+    docReference.value = state.reference || docReference.value;
+    docDate.value = state.date || docDate.value;
+    docFooter.value = state.footer || docFooter.value;
+    htmlInput.value = state.html || htmlInput.value;
+    editor.innerHTML = parseHtmlFragment(htmlInput.value);
+    await syncMetaToPreview();
+    await syncPreviewFromEditor();
+    applyPreviewModeFromUrl();
+    return true;
+  }
+
+  async function loadDraft() {
     const raw = localStorage.getItem(STUDIO_STORAGE_KEY);
 
     if (!raw) {
@@ -132,15 +279,15 @@ function initDocumentStudio() {
       docFooter.value = state.footer || docFooter.value;
       htmlInput.value = state.html || htmlInput.value;
       editor.innerHTML = parseHtmlFragment(htmlInput.value);
-      syncMetaToPreview();
-      syncPreviewFromEditor();
+      await syncMetaToPreview();
+      await syncPreviewFromEditor();
       return true;
     } catch (_error) {
       return false;
     }
   }
 
-  function loadSample() {
+  async function loadSample() {
     docKicker.value = "Nenterprises Internal Document";
     docTitle.value = "Building continuity through doctrine and execution.";
     docSubtitle.value = "This document translates principles into a readable, branded format for internal and external use.";
@@ -149,11 +296,11 @@ function initDocumentStudio() {
     docFooter.value = "Nenterprises | Institutional continuity through doctrine, systems, and stewardship.";
     htmlInput.value = sampleHtml;
     editor.innerHTML = parseHtmlFragment(sampleHtml);
-    syncMetaToPreview();
-    syncPreviewFromEditor();
+    await syncMetaToPreview();
+    await syncPreviewFromEditor();
   }
 
-  function clearDocument() {
+  async function clearDocument() {
     docTitle.value = "";
     docSubtitle.value = "";
     docReference.value = "";
@@ -161,13 +308,88 @@ function initDocumentStudio() {
     docFooter.value = "";
     htmlInput.value = "";
     editor.innerHTML = "";
-    syncMetaToPreview();
-    syncPreviewFromEditor();
+    await syncMetaToPreview();
+    await syncPreviewFromEditor();
   }
 
-  function importHtml() {
+  async function importHtml() {
     editor.innerHTML = parseHtmlFragment(htmlInput.value);
-    syncPreviewFromEditor();
+    await syncPreviewFromEditor();
+  }
+
+  function buildEmailHtml() {
+    const logoUrl = new URL("../assets/logo-header.svg", window.location.href).href;
+    return `
+      <div style="margin:0;padding:32px 18px;background:#f8f4ee;font-family:Inter,'Segoe UI',sans-serif;color:#0a0a0a;">
+        <div style="max-width:760px;margin:0 auto;background:#fffdf9;padding:44px 42px;border:1px solid #e7e1d6;">
+          <div style="display:block;padding-bottom:24px;border-bottom:1px solid rgba(10,10,10,0.1);">
+            <img src="${logoUrl}" alt="Nenterprises" style="width:240px;max-width:100%;display:block;margin-bottom:18px;">
+            <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#6e6a64;">
+              <span>${previewReference.textContent}</span>
+              <span>${previewDate.textContent}</span>
+            </div>
+          </div>
+          <div style="padding:28px 0 20px;">
+            <p style="margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#6e6a64;">${previewKicker.textContent}</p>
+            <h1 style="margin:0 0 16px;font-family:'Inter Tight',Inter,'Segoe UI',sans-serif;font-size:44px;font-weight:700;line-height:0.96;letter-spacing:-0.06em;color:#0a0a0a;">${previewTitle.textContent}</h1>
+            <p style="margin:0;max-width:58ch;font-size:18px;line-height:1.7;color:rgba(10,10,10,0.72);">${previewSubtitle.textContent}</p>
+          </div>
+          <div style="font-size:16px;line-height:1.8;color:#0a0a0a;">
+            ${previewBody.innerHTML}
+          </div>
+          <div style="padding-top:22px;margin-top:28px;border-top:1px solid rgba(10,10,10,0.1);font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#6e6a64;">
+            ${previewFooter.textContent}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  async function copyRichHtml() {
+    const html = buildEmailHtml();
+    const plainText = [
+      previewKicker.textContent,
+      previewTitle.textContent,
+      previewSubtitle.textContent,
+      "",
+      previewBody.innerText.trim(),
+      "",
+      previewFooter.textContent,
+    ].join("\n");
+
+    if (navigator.clipboard && window.ClipboardItem) {
+      const clipboardItem = new ClipboardItem({
+        "text/html": new Blob([html], { type: "text/html" }),
+        "text/plain": new Blob([plainText], { type: "text/plain" }),
+      });
+
+      await navigator.clipboard.write([clipboardItem]);
+    } else if (navigator.clipboard) {
+      await navigator.clipboard.writeText(html);
+    } else {
+      throw new Error("Clipboard API unavailable");
+    }
+
+    setStatus("Rich HTML copied. You can paste it into an email.");
+  }
+
+  async function copySourceHtml() {
+    await navigator.clipboard.writeText(htmlInput.value);
+    setStatus("Source HTML copied.");
+  }
+
+  async function copyShareLink() {
+    const shareUrl = await buildShareUrl();
+    await navigator.clipboard.writeText(shareUrl);
+    if (shareLinkOutput) {
+      shareLinkOutput.value = shareUrl;
+    }
+    setStatus("Share link copied.");
+  }
+
+  async function openShareView() {
+    const shareUrl = await buildShareUrl(true);
+    window.open(shareUrl, "_blank", "noopener");
   }
 
   function downloadHtml() {
@@ -336,7 +558,7 @@ ${previewClone.outerHTML}
   }
 
   toolbarButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
       editor.focus();
 
       const block = button.dataset.block;
@@ -355,60 +577,93 @@ ${previewClone.outerHTML}
         }
       }
 
-      syncPreviewFromEditor();
+      await syncPreviewFromEditor();
     });
   });
 
   actionButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const action = button.dataset.action;
+    button.addEventListener("click", async () => {
+      try {
+        const action = button.dataset.action;
 
-      if (action === "import-html") {
-        importHtml();
-      }
+        if (action === "import-html") {
+          await importHtml();
+        }
 
-      if (action === "save-local") {
-        saveDraft();
-      }
+        if (action === "save-local") {
+          saveDraft();
+          setStatus("Draft saved locally on this device.");
+        }
 
-      if (action === "load-sample") {
-        loadSample();
-      }
+        if (action === "copy-source-html") {
+          await copySourceHtml();
+        }
 
-      if (action === "clear") {
-        clearDocument();
-      }
+        if (action === "load-sample") {
+          await loadSample();
+        }
 
-      if (action === "print") {
-        window.print();
-      }
+        if (action === "clear") {
+          await clearDocument();
+        }
 
-      if (action === "download-html") {
-        downloadHtml();
+        if (action === "print") {
+          window.print();
+        }
+
+        if (action === "copy-rich-html") {
+          await copyRichHtml();
+        }
+
+        if (action === "copy-share-link") {
+          await copyShareLink();
+        }
+
+        if (action === "open-share-view") {
+          await openShareView();
+        }
+
+        if (action === "download-html") {
+          downloadHtml();
+          setStatus("Standalone HTML file downloaded.");
+        }
+      } catch (_error) {
+        setStatus("That action could not complete in this browser.");
       }
     });
   });
 
   [docKicker, docTitle, docSubtitle, docReference, docDate, docFooter].forEach((field) => {
-    field.addEventListener("input", () => {
-      syncMetaToPreview();
+    field.addEventListener("input", async () => {
+      await syncMetaToPreview();
       saveDraft();
     });
   });
 
-  htmlInput.addEventListener("input", saveDraft);
+  htmlInput.addEventListener("input", async () => {
+    saveDraft();
+    await syncShareLink();
+  });
 
-  editor.addEventListener("input", () => {
-    syncPreviewFromEditor();
+  editor.addEventListener("input", async () => {
+    await syncPreviewFromEditor();
     saveDraft();
   });
 
-  if (!loadDraft()) {
-    loadSample();
-  } else {
-    syncMetaToPreview();
-    syncPreviewFromEditor();
-  }
+  (async () => {
+    applyPreviewModeFromUrl();
+
+    if (await loadDraftFromUrl()) {
+      return;
+    }
+
+    if (!(await loadDraft())) {
+      await loadSample();
+    } else {
+      await syncMetaToPreview();
+      await syncPreviewFromEditor();
+    }
+  })();
 }
 
 initDocumentStudio();
