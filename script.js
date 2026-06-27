@@ -60,6 +60,11 @@ function initDocumentStudio() {
     return;
   }
 
+  document.body.classList.add("is-studio-page");
+  document.querySelectorAll("[data-reveal]").forEach((node) => {
+    node.classList.add("is-visible");
+  });
+
   const docKicker = document.querySelector("#doc-kicker");
   const docTitle = document.querySelector("#doc-title");
   const docSubtitle = document.querySelector("#doc-subtitle");
