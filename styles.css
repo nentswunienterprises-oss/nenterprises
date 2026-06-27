@@ -809,6 +809,29 @@ button {
   font-size: 0.86rem;
 }
 
+.studio-mode-banner {
+  display: none;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+  background: rgba(10, 10, 10, 0.92);
+  color: #fff;
+}
+
+.studio-mode-banner-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.studio-mode-banner p {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .studio-action {
   min-height: 48px;
 }
@@ -951,6 +974,10 @@ body.studio-preview-mode .preview-actions,
 body.studio-preview-mode .share-link-row,
 body.studio-preview-mode .studio-status {
   display: none;
+}
+
+body.studio-preview-mode .studio-mode-banner {
+  display: block;
 }
 
 body.studio-preview-mode .studio-shell {
@@ -1337,6 +1364,11 @@ body.studio-preview-mode .doc-preview {
 
   .footer-shell,
   .footer-brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .studio-mode-banner-shell {
     flex-direction: column;
     align-items: flex-start;
   }

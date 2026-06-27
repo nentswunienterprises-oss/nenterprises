@@ -202,7 +202,7 @@ function initDocumentStudio() {
       return;
     }
 
-    shareLinkOutput.value = await buildShareUrl();
+    shareLinkOutput.value = await buildShareUrl(true);
   }
 
   function applyPreviewModeFromUrl() {
@@ -379,7 +379,7 @@ function initDocumentStudio() {
   }
 
   async function copyShareLink() {
-    const shareUrl = await buildShareUrl();
+    const shareUrl = await buildShareUrl(true);
     await navigator.clipboard.writeText(shareUrl);
     if (shareLinkOutput) {
       shareLinkOutput.value = shareUrl;
@@ -387,9 +387,19 @@ function initDocumentStudio() {
     setStatus("Share link copied.");
   }
 
+  async function copyEditorLink() {
+    const editorUrl = await buildShareUrl(false);
+    await navigator.clipboard.writeText(editorUrl);
+    setStatus("Editor link copied.");
+  }
+
   async function openShareView() {
     const shareUrl = await buildShareUrl(true);
     window.open(shareUrl, "_blank", "noopener");
+  }
+
+  async function openEditorView() {
+    window.location.href = await buildShareUrl(false);
   }
 
   function downloadHtml() {
@@ -619,8 +629,16 @@ ${previewClone.outerHTML}
           await copyShareLink();
         }
 
+        if (action === "copy-editor-link") {
+          await copyEditorLink();
+        }
+
         if (action === "open-share-view") {
           await openShareView();
+        }
+
+        if (action === "open-editor-view") {
+          await openEditorView();
         }
 
         if (action === "download-html") {
