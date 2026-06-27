@@ -318,7 +318,7 @@ function initDocumentStudio() {
   }
 
   function buildEmailHtml() {
-    const logoUrl = new URL("../assets/logo-header.svg", window.location.href).href;
+    const logoUrl = new URL("../assets/logo-showcase.svg", window.location.href).href;
     return `
       <div style="margin:0;padding:32px 18px;background:#f8f4ee;font-family:Inter,'Segoe UI',sans-serif;color:#0a0a0a;">
         <div style="max-width:760px;margin:0 auto;background:#fffdf9;padding:44px 42px;border:1px solid #e7e1d6;">
