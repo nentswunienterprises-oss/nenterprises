@@ -1,28 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
-  <path d="M133 114H258" stroke="#0A0A0A" stroke-width="6" stroke-linecap="square"/>
-  <path d="M129 118V191" stroke="#0A0A0A" stroke-width="6" stroke-linecap="square"/>
-  <path d="M195 125H259L334 248H269L195 125Z" fill="#0A0A0A"/>
-
-  <path d="M328 116H406" stroke="#0A0A0A" stroke-width="6" stroke-linecap="square"/>
-  <path d="M367 118V191" stroke="#0A0A0A" stroke-width="6" stroke-linecap="square"/>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 340" fill="none">
+  <path d="M56 38H134" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M82 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M218 38H300" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M259 38V132" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M56 296H134" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M82 204V296" stroke="#0A0A0A" stroke-width="7" stroke-linecap="square"/>
+  <path d="M82 38H128L174 132H122L82 38Z" fill="#0A0A0A"/>
+  <path d="M198 209H262V301H234L198 209Z" fill="#0A0A0A"/>
   <text
-    x="250"
-    y="257"
+    x="180"
+    y="182"
     fill="#0A0A0A"
-    font-family="'Arial Narrow', Arial, sans-serif"
-    font-size="38"
+    font-family="Inter, Arial, sans-serif"
+    font-size="29"
     font-weight="700"
-    letter-spacing="10"
+    letter-spacing="5"
     text-anchor="middle"
+    textLength="214"
+    lengthAdjust="spacingAndGlyphs"
   >
     ENTERPRISES
   </text>
-
-  <path d="M134 355H218" stroke="#0A0A0A" stroke-width="6" stroke-linecap="square"/>
-  <path d="M176 278V352" stroke="#0A0A0A" stroke-width="6" stroke-linecap="square"/>
-
-  <path d="M301 275H364L364 386H338L301 275Z" fill="#0A0A0A"/>
-  <path d="M301 275H364" stroke="#0A0A0A" stroke-width="4"/>
-  <path d="M364 275V389" stroke="#0A0A0A" stroke-width="4"/>
 </svg>
