@@ -25,10 +25,6 @@ Focus: Building regional logistics infrastructure that enables reliable, afforda
 
 Ecosystem Divisions
 The following entities operate as divisions of Nenterprises and are not separate legal entities unless formally established otherwise.
-First Conviction
-Purpose: Formation and Self-Stewardship Infrastructure.
-Responsibility: Develop individuals from unexamined living toward intentional living and self-stewardship.
-
 Accord Signal
 Purpose: Capability Development Infrastructure.
 Responsibility: Develop capability through conditioning, certification, readiness systems, role architecture, and attention infrastructure.
@@ -60,7 +56,6 @@ Response Integrity (Pty) Ltd
 Relief Works Technologies (Pty) Ltd
 Tsa Kasi Logistics (Pty) Ltd
 Divisions:
-First Conviction
 Accord Signal
 Steward State
 City of Problem Solving
