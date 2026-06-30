@@ -103,6 +103,7 @@ button {
 }
 
 .brand-mark {
+  display: block;
   width: 172px;
   height: auto;
   object-fit: contain;
@@ -110,12 +111,12 @@ button {
 }
 
 .brand-mark-header {
-  width: 112px;
-  max-width: min(28vw, 112px);
+  width: 104px;
+  max-width: min(26vw, 104px);
 }
 
 .brand-mark.large {
-  width: 196px;
+  width: 186px;
   height: auto;
 }
 
@@ -905,7 +906,7 @@ button {
 }
 
 .doc-preview-logo {
-  width: 240px;
+  width: 220px;
   max-width: 100%;
 }
 
@@ -1183,7 +1184,7 @@ body.studio-preview-mode .doc-preview {
 }
 
 .footer-mark {
-  width: 118px;
+  width: 108px;
   opacity: 0.98;
 }
 
@@ -1315,15 +1316,15 @@ body.studio-preview-mode .doc-preview {
   }
 
   .brand-mark {
-    width: 138px;
+    width: 132px;
   }
 
   .brand-mark-header {
-    width: min(30vw, 88px);
+    width: min(29vw, 82px);
   }
 
   .brand-mark.large {
-    width: 154px;
+    width: 146px;
   }
 
   .site-map-grid,
