@@ -380,6 +380,22 @@ button {
   overflow: hidden;
 }
 
+.hero-panel-frame .panel-label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  backdrop-filter: blur(10px);
+}
+
 .hero-panel-frame::before,
 .hero-panel-frame::after {
   position: absolute;
