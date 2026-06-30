@@ -111,8 +111,8 @@ button {
 }
 
 .brand-mark-header {
-  width: 104px;
-  max-width: min(26vw, 104px);
+  width: 118px;
+  max-width: min(28vw, 118px);
 }
 
 .brand-mark.large {
@@ -1320,7 +1320,7 @@ body.studio-preview-mode .doc-preview {
   }
 
   .brand-mark-header {
-    width: min(29vw, 82px);
+    width: min(31vw, 92px);
   }
 
   .brand-mark.large {
