@@ -97,7 +97,7 @@ button {
 .brand-lockup {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 0;
   margin-left: 24px;
   min-width: 0;
 }
@@ -110,17 +110,8 @@ button {
 }
 
 .brand-mark-header {
-  width: 108px;
-  max-width: min(28vw, 108px);
-}
-
-.brand-wordmark {
-  font-family: "Inter Tight", "Inter", sans-serif;
-  font-size: 1.02rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  line-height: 1;
-  white-space: nowrap;
+  width: 112px;
+  max-width: min(28vw, 112px);
 }
 
 .brand-mark.large {
@@ -1253,7 +1244,7 @@ body.studio-preview-mode .doc-preview {
 
 @media (max-width: 800px) {
   .brand-lockup {
-    gap: 8px;
+    gap: 0;
     margin-left: 0;
   }
 
@@ -1328,13 +1319,7 @@ body.studio-preview-mode .doc-preview {
   }
 
   .brand-mark-header {
-    width: min(28vw, 92px);
-    margin-right: -8px;
-  }
-
-  .brand-wordmark {
-    font-size: 0.82rem;
-    letter-spacing: 0.18em;
+    width: min(30vw, 88px);
   }
 
   .brand-mark.large {
