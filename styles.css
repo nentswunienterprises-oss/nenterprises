@@ -739,6 +739,22 @@ button {
   margin-top: 0;
 }
 
+.about-page-hero {
+  padding: 44px 0 18px;
+}
+
+.about-page-title {
+  max-width: none;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.about-page-hero .page-summary {
+  max-width: 70ch;
+  margin-top: 14px;
+}
+
 .document-card strong {
   display: block;
   font-size: 1rem;
