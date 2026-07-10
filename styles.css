@@ -718,6 +718,27 @@ button {
   text-transform: uppercase;
 }
 
+.about-document {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 44px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(243, 237, 228, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.about-document-lead {
+  max-width: 62ch;
+  color: rgba(10, 10, 10, 0.78);
+  font-size: 1.08rem;
+}
+
+.about-document h2:first-of-type {
+  margin-top: 0;
+}
+
 .document-card strong {
   display: block;
   font-size: 1rem;
@@ -1323,6 +1344,7 @@ body.studio-preview-mode .doc-preview {
   .copy-card,
   .principle-card,
   .not-found-card,
+  .about-document,
   .studio-panel,
   .cta-band-shell,
   .documents-shell {
