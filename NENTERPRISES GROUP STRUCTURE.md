@@ -42,7 +42,7 @@ Purpose: Meaning and Narrative Infrastructure.
 Responsibility: Articulate, strengthen, and communicate meaningful ideas capable of attracting people, communities, opportunities, capital, and institutions.
 
 Capital Structure Principle
-Commercial subsidiaries generate revenue through marketplace activity.
+Commercial subsidiaries generate revenue through market activity and value creation.
 Divisions do not operate as independent legal entities and do not hold capital independently.
 Nenterprises allocates budgets, resources, personnel, and attention to divisions according to strategic priorities and ecosystem needs.
 
